@@ -1,5 +1,8 @@
 <section class="container">
-    <div class="grid"></div>
+    <div class="grid">
+        <div class="grid-sizer" style="width: 18%"></div>
+        <div class="gutter-sizer" style="width: 2%"></div>
+    </div>
 </section>
 <footer class="container">
 </footer>
@@ -10,8 +13,8 @@ var grid, msnry, chargement_termine = false;
 window.onload = function () {
     grid = document.querySelector('.grid');
     msnry = new Masonry( grid, {
-        fitWidth: true,
-        gutter: 1,
+        columnWidth: ".grid-sizer",
+        gutter: ".gutter-sizer",
         itemSelector: '.grid-item'
         });
 };
