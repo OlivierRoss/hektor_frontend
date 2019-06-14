@@ -1,7 +1,9 @@
 require 'sinatra'
+require 'curb'
+require 'json'
 
 get '/' do
-    @image = "https://wallpapertag.com/wallpaper/full/d/7/f/966832-full-size-hd-wallpaper-widescreen-1920x1080-1920x1080-tablet.jpg"
+    @image = get_last_img
 	erb :index
 end
 
@@ -11,4 +13,8 @@ end
 
 get '/oeuvres' do
   erb :oeuvres
+end
+
+def get_last_img
+  JSON.parse(Curl.get('https://api.hektor.ca/rest/artworks/?format=json&limit=1').body)["results"].first["full"]
 end

@@ -8,6 +8,12 @@
 	<link rel="stylesheet" type="text/css" href="css/Skeleton-2.0.4/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/Skeleton-2.0.4/css/skeleton.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <% if @env["PATH_INFO"].match(/oeuvres/) %>
+	    <link rel="stylesheet" type="text/css" href="css/oeuvres.css">
+        <script src="/lib/masonry.pkgd.min.js"></script>
+        <script src="/lib/grille-images.js"></script>
+    <% end %>
 </head>
 <body>
 	<header class="container">
