@@ -12,9 +12,14 @@ get '/bio' do
 end
 
 get '/oeuvres' do
+  @oeuvres = get_all_img.to_json
   erb :oeuvres
 end
 
 def get_last_img
   JSON.parse(Curl.get('https://api.hektor.ca/rest/artworks/?format=json&limit=1').body)["results"].first["full"]
+end
+
+def get_all_img
+  JSON.parse(Curl.get('https://api.hektor.ca/rest/artworks/?format=json&limit=10000').body)["results"].map {|i| i["full"]}
 end

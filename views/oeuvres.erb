@@ -1,5 +1,21 @@
 <section class="container">
-    <div class="grid"> </div>
+    <div class="grid"></div>
 </section>
 <footer class="container">
 </footer>
+<script type="text/javascript">
+
+var oeuvres = <%= @oeuvres %>;
+var grid, msnry, chargement_termine = false;
+window.onload = function () {
+    grid = document.querySelector('.grid');
+    msnry = new Masonry( grid, {
+        fitWidth: true,
+        gutter: 1,
+        itemSelector: '.grid-item'
+        });
+};
+
+setInterval(function () {add_images(10)}, 500);
+
+</script>
