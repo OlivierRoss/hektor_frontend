@@ -7,6 +7,10 @@ get '/' do
 	erb :index
 end
 
+get '/info' do
+  erb :info
+end
+
 get '/bio' do
   erb :bio
 end
@@ -21,5 +25,5 @@ def get_last_img
 end
 
 def get_all_img
-  JSON.parse(Curl.get('https://api.hektor.ca/rest/artworks/?format=json&limit=10000').body)["results"].map {|i| i["full"]}
+  JSON.parse(Curl.get('https://api.hektor.ca/rest/artworks/?format=json&limit=10000').body)["results"].map {|i| i["thumbnail"]}
 end

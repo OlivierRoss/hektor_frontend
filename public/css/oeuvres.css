@@ -3,21 +3,17 @@
     display: block;
     clear: both;
 }
-
 .grid {
     margin: 0 auto;
 }
 
-.grid-sizer,
 .grid-item {
-  width: 160px;
-}
-.grid-item {
+  width: 19%;
   float: left;
   background: #D26;
   margin-bottom: 10px;
 }
 
-img {
+.grid-item img {
     width: 100%;
 }

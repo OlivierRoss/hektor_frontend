@@ -1,24 +1,18 @@
 <section class="container">
     <div class="grid">
-        <div class="grid-sizer" style="width: 18%"></div>
-        <div class="gutter-sizer" style="width: 2%"></div>
+        <div class="grid-sizer" style="width: 19%"></div>
+        <div class="gutter-sizer" style="width: 1%"></div>
     </div>
 </section>
 <footer class="container">
 </footer>
 <script type="text/javascript">
 
-var oeuvres = <%= @oeuvres %>;
-var grid, msnry, chargement_termine = false;
-window.onload = function () {
-    grid = document.querySelector('.grid');
-    msnry = new Masonry( grid, {
-        columnWidth: ".grid-sizer",
-        gutter: ".gutter-sizer",
-        itemSelector: '.grid-item'
-        });
-};
-
-setInterval(function () {add_images(10)}, 500);
+var oeuvres = <%= @oeuvres %>,
+    grid, msnry,
+    chargement_termine = false,
+    en_travail = {
+        etat: false
+    };
 
 </script>
